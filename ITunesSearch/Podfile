@@ -1,0 +1,28 @@
+platform :ios, '9.0'
+
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+def shared_pods
+    
+    # Code style
+    pod 'SwiftLint', '~> 0.24'
+    
+    # DSL to make Auto Layout easy
+    # https://github.com/SnapKit
+    pod 'SnapKit', '~> 4.0'
+    
+    # Images management
+    pod 'SDWebImage', '~> 4.0'
+    
+    # A Swift Mixin to deal with reusable UITableView & UICollectionView cells and XIB-based views
+    pod 'Reusable', '~> 4.0.0'
+end
+
+
+target 'ITunesSearch' do
+
+  shared_pods
+
+end
