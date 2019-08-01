@@ -1,0 +1,7 @@
+{
+    "api": {
+        "itunesSearchApi": "https://itunes.apple.com",
+        "publicKey": "",
+        "privateKey": ""
+    }
+}
