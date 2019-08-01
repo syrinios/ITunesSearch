@@ -1,5 +1,5 @@
 platform :ios, '9.0'
-
+use_frameworks!
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
@@ -15,7 +15,7 @@ def shared_pods
     
     # Images management
     pod 'SDWebImage', '~> 4.0'
-    
+
     # A Swift Mixin to deal with reusable UITableView & UICollectionView cells and XIB-based views
     pod 'Reusable', '~> 4.0.0'
 end

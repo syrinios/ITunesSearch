@@ -1,4 +1,4 @@
-module Pods_ITunesSearch {
+framework module Pods_ITunesSearch {
   umbrella header "Pods-ITunesSearch-umbrella.h"
 
   export *

@@ -44,10 +44,11 @@ struct SearchItem: Codable {
     let collectionName: String?
     let trackName: String?
     let artistViewUrl: URL?
-    let previewUrl: URL?
+    let thumbnailUrl: URL?
     let trackViewUrl: URL?
     let collectionPrice: Double?
     let trackPrice: Double?
+    let currency: String
     let releaseDate: Date?
     let country: String?
     let trackNumber: Int?
@@ -64,10 +65,11 @@ struct SearchItem: Codable {
         case collectionName
         case trackName
         case artistViewUrl
-        case previewUrl
+        case thumbnailUrl = "artworkUrl100"
         case trackViewUrl
         case collectionPrice
         case trackPrice
+        case currency
         case releaseDate
         case country
         case trackNumber

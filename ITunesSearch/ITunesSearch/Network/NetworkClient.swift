@@ -114,7 +114,7 @@ extension NetworkClient {
         let sessionConfiguration = NetworkClient.commonSessionConfiguration()
         if #available(iOS 11, *) {
             sessionConfiguration.waitsForConnectivity = true
-            sessionConfiguration.timeoutIntervalForResource = 300
+            sessionConfiguration.timeoutIntervalForResource = 60
         }
         return URLSession(configuration: sessionConfiguration)
     }()

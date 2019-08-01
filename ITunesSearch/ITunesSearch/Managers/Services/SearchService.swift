@@ -33,7 +33,11 @@ class SearchService {
                                                     return
                                                 }
                                                 guard let result = JSONDecoder.decodeServerResponse(SearchResult.self, from: data_, errorCallback: callback) else { return }
-                                                callback(.success(result))
+                                                if result.resultCount > 0 && result.results.count > 0 {
+                                                    callback(.success(result))
+                                                } else {
+                                                    callback(.failure(ItunesSearchError.noData))
+                                                }
                                             case .error(let error):
                                                 callback(.failure(error))
                                             }

@@ -21,6 +21,7 @@ extension DateFormatter {
     }
     
     @nonobjc static let dmyFormatter = DateFormatter(format: "dd/MM/yyyy")
-    @nonobjc static let isoDate = DateFormatter(format: "yyyy-MM-dd")
+    @nonobjc static let isoDate = DateFormatter(format: "dd/MM/yyyy")
+    @nonobjc static let year = DateFormatter(format: "yyyy")
     @nonobjc static let fullDate = DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ssZ")
     }
