@@ -12,16 +12,16 @@ import Reusable
 
 class ItunesSearchController: UIViewController {
     @IBOutlet weak var contentView: UIView!
-    
+
     private let tableView = UITableView()
     var dataSource = ItemListDataSource(searchResult: SearchResult(resultCount: 0, results: []))
+    var serachTerm = ""
+    let activityIndicator = UIActivityIndicatorView(style: .gray)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
         setupTableView()
-        
         let emptyView = EmptyView.fromNib() as EmptyView
         emptyView.mode = .search
         updateContentView(with: emptyView)
@@ -42,6 +42,49 @@ class ItunesSearchController: UIViewController {
         contentView.addSubview(view)
         view.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let filterController = segue.destination as? FilterController else { return }
+        filterController.delegate = self
+    }
+    
+    private func showLoader() {
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
+        activityIndicator.startAnimating()
+        updateContentView(with: activityIndicator)
+    }
+    
+    private func hideLoader() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+    }
+    
+    private func searchTerm(_ term: String) {
+        showLoader()
+        let options = SearchOptions( media: MediaCache.get(), resultsLimit: nil)
+        SearchManager(item: term, options: options).searchItems { (res) in
+            switch res {
+            case .success(let items):
+                print("\(items)")
+                self.dataSource = ItemListDataSource(searchResult: items)
+                self.tableView.reloadData()
+                self.updateContentView(with: self.tableView)
+                self.hideLoader()
+            case .failure(let error):
+                print("\(error.localizedDescription)")
+                self.hideLoader()
+                let emptyView = EmptyView.fromNib() as EmptyView
+                if let error = error as? ItunesSearchError {
+                    if error.errorDescription == ItunesSearchError.noData.errorDescription {
+                        emptyView.mode = .noData
+                    }
+                } else {
+                    emptyView.mode = .error(error)
+                }
+                self.updateContentView(with: emptyView)
+            }
+        }
+    }
 }
 
 extension ItunesSearchController: UISearchBarDelegate {
@@ -51,27 +94,8 @@ extension ItunesSearchController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         guard let term = searchBar.text else { return }
-        SearchManager(item: term, options: nil).searchItems { (res) in
-            switch res {
-            case .success(let items):
-                print("\(items)")
-                self.dataSource = ItemListDataSource(searchResult: items)
-                self.tableView.reloadData()
-                self.updateContentView(with: self.tableView)
-            case .failure(let error):
-                print("\(error.localizedDescription)")
-                let emptyView = EmptyView.fromNib() as EmptyView
-
-                if let error = error as? ItunesSearchError {
-                    if error.errorDescription == ItunesSearchError.noData.errorDescription {
-                        emptyView.mode = .noData
-                    }
-                } else {
-                    emptyView.mode = .error(error)
-                }                
-                self.updateContentView(with: emptyView)
-            }
-        }
+        serachTerm = term
+        searchTerm(serachTerm)
     }
 }
 
@@ -88,5 +112,11 @@ extension ItunesSearchController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SearchItemCell.self)
         cell.item = dataSource.item(indexPath: indexPath)
         return cell
+    }
+}
+
+extension ItunesSearchController: ItunesSearchDelegate {
+    func updateSearch() {
+        searchTerm(serachTerm)
     }
 }

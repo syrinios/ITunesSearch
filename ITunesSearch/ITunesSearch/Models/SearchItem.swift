@@ -19,11 +19,33 @@ enum Media: String, Codable {
     case software
     case ebook
     case all
+
+    static let allValues = [movie, podcast, music, musicVideo, audiobook,
+                            shortFilm, tvShow, software, ebook, all]//.map({ $0.mediaName })
     
     var mediaName: String {
         return String(describing: self)
     }
+    
+    public static func == (rhs: Media?, lhs: Media) -> Bool {
+        return rhs?.mediaName.elementsEqual(lhs.mediaName) ?? false
+    }
 }
+
+struct MediaCache {
+    static let key = Constants.filters
+    static func save(_ value: Media) {
+        UserDefaults.standard.set(value.rawValue, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    static func get() -> Media? {
+        guard let rawValue  = UserDefaults.standard.string(forKey: key) else { return nil }
+        return Media(rawValue: rawValue)    }
+    static func remove() {
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+}
+
 
 struct SearchResult: Codable {
     let resultCount: Int

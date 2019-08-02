@@ -13,6 +13,8 @@
 		81A7ABCD22F35BF300C940A3 /* UIVIew+Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABCC22F35BF300C940A3 /* UIVIew+Shadows.swift */; };
 		81A7ABCF22F35C4C00C940A3 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABCE22F35C4C00C940A3 /* UIColor+Utils.swift */; };
 		81A7ABD122F3696800C940A3 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD022F3696800C940A3 /* String+Utils.swift */; };
+		81A7ABD322F3757F00C940A3 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD222F3757F00C940A3 /* FilterController.swift */; };
+		81A7ABD722F3891C00C940A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD622F3891C00C940A3 /* Constants.swift */; };
 		81DDBB4122F230CA00FE376E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DDBB4022F230CA00FE376E /* AppDelegate.swift */; };
 		81DDBB4322F230CA00FE376E /* ItunesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */; };
 		81DDBB4622F230CA00FE376E /* ItunesSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DDBB4422F230CA00FE376E /* ItunesSearch.storyboard */; };
@@ -53,6 +55,8 @@
 		81A7ABCC22F35BF300C940A3 /* UIVIew+Shadows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Shadows.swift"; sourceTree = "<group>"; };
 		81A7ABCE22F35C4C00C940A3 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		81A7ABD022F3696800C940A3 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		81A7ABD222F3757F00C940A3 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
+		81A7ABD622F3891C00C940A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		81DDBB3D22F230CA00FE376E /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DDBB4022F230CA00FE376E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				81DDBB6C22F2C75000FE376E /* Configuration.swift */,
 				81DDBB7E22F2DF6500FE376E /* SearchOptions.swift */,
 				81DDBB8022F2E12D00FE376E /* SearchItem.swift */,
+				81A7ABD622F3891C00C940A3 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				81DDBB9522F3200B00FE376E /* Views */,
 				81DDBB9022F31B8500FE376E /* DataSource */,
 				81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */,
+				81A7ABD222F3757F00C940A3 /* FilterController.swift */,
 				81DDBB4422F230CA00FE376E /* ItunesSearch.storyboard */,
 			);
 			path = Search;
@@ -435,6 +441,7 @@
 				81DDBB6922F2371900FE376E /* Logger.swift in Sources */,
 				81DDBB9B22F3307C00FE376E /* UIImageView+URL.swift in Sources */,
 				81DDBB8522F2FDF500FE376E /* DateFormatter+Extensions.swift in Sources */,
+				81A7ABD322F3757F00C940A3 /* FilterController.swift in Sources */,
 				81DDBB6022F2366600FE376E /* ItunesSearchEndpoint.swift in Sources */,
 				81A7ABC922F3367000C940A3 /* Int+Utils.swift in Sources */,
 				81DDBB9822F3202A00FE376E /* SearchItemCell.swift in Sources */,
@@ -443,6 +450,7 @@
 				81DDBB5E22F2362F00FE376E /* ItunesSearchNetworkClient.swift in Sources */,
 				81DDBB7422F2CAAF00FE376E /* Dictionary+UnsafeMerge.swift in Sources */,
 				81A7ABD122F3696800C940A3 /* String+Utils.swift in Sources */,
+				81A7ABD722F3891C00C940A3 /* Constants.swift in Sources */,
 				81DDBB6F22F2C82000FE376E /* ConfigurationManager.swift in Sources */,
 				81DDBB8322F2FDD400FE376E /* JSONDecoder+Utils.swift in Sources */,
 				81DDBB4122F230CA00FE376E /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SearchOptions.swift
+//  Constants.swift
 //  ITunesSearch
 //
 //  Created by Syrine Ferjani on 8/1/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SearchOptions: Codable {
-    var media: Media?
-    var resultsLimit: Int?
+struct Constants {
+    static let filters = "Filters"
+    static let media = "Media"
 }

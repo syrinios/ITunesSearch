@@ -42,7 +42,7 @@ class SearchItemCell: UITableViewCell, NibReusable {
     
     private func reload() {
         previewImageView.sfSetImage(with: item?.thumbnailUrl, placeholder: #imageLiteral(resourceName: "placeholder"))
-        kindLabel.text = item?.kind?.firstUppercased ?? "Kind undefined"
+        kindLabel.text = item?.kind?.firstUppercased.replacingOccurrences(of: "-", with: " ") ?? "Kind undefined"
         trackNameLabel.text = item?.trackName ?? ""
         artistNameLabel.text = item?.artistName ?? ""
         if let trackTimeMillis = item?.trackTimeMillis, trackTimeMillis > 0 {

@@ -21,8 +21,8 @@ class SearchService {
             "term": item
         ]
         if let options = options {
-           params["media"] = options.media.mediaName
-           params["limit"] = "\(options.resultsLimit)"
+            params["media"] = options.media?.mediaName
+            params["limit"] = "\(String(describing: options.resultsLimit))"
         }
         return ItunesSearchNetworkClient.request(endpoint: .search,
                                         parameters: params) { (result) in

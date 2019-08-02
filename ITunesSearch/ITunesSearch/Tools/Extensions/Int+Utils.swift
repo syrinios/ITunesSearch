@@ -11,9 +11,10 @@ import Foundation
 extension Int {
     func milliSecondsToHoursMinutuesSeconds() -> String {
         let seconds = self / 1000
-        let hh = (seconds / 3600) > 0 ? "\(seconds / 3600)" : ""
-        let mm = ((seconds % 3600) / 60 ) > 0 ? "\((seconds % 3600) / 60 ):" : "00:"
-        let ss = ((seconds % 3600) % 60 ) > 0 ? "\((seconds % 3600) % 60 ):" : "00"
-        return "\(hh)\(mm)\(ss)"
+        let hh = (seconds / 3600) > 0 ? seconds / 3600 : 0
+        let mm = ((seconds % 3600) / 60 ) > 0 ? (seconds % 3600) / 60 : 0
+        let ss = ((seconds % 3600) % 60 ) > 0 ? (seconds % 3600) % 60  : 0
+        return String(format: "%02d:%02d:%02d", hh, mm, ss)
+
     }
 }

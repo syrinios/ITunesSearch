@@ -50,19 +50,19 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol4-Sr-RWs">
-                                                        <rect key="frame" x="48.5" y="91.5" width="63.5" height="20.5"/>
-                                                        <color key="backgroundColor" red="0.53772280496670244" green="0.53040945368310033" blue="0.69551078680203049" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <rect key="frame" x="52.5" y="95.5" width="63.5" height="20.5"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="s1V-BS-ZFC" firstAttribute="leading" secondItem="8a7-V5-yad" secondAttribute="leading" id="9mV-7s-T6p"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ol4-Sr-RWs" secondAttribute="trailing" constant="8" id="B9A-la-ENM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ol4-Sr-RWs" secondAttribute="trailing" constant="4" id="B9A-la-ENM"/>
                                                     <constraint firstAttribute="width" secondItem="8a7-V5-yad" secondAttribute="height" multiplier="1:1" id="IFl-Lg-FMD"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ol4-Sr-RWs" secondAttribute="bottom" constant="8" id="NHX-db-BxK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ol4-Sr-RWs" secondAttribute="bottom" constant="4" id="NHX-db-BxK"/>
                                                     <constraint firstAttribute="trailing" secondItem="s1V-BS-ZFC" secondAttribute="trailing" id="QuI-wH-twk"/>
                                                     <constraint firstAttribute="bottom" secondItem="s1V-BS-ZFC" secondAttribute="bottom" id="fCx-MQ-G3Q"/>
                                                     <constraint firstItem="s1V-BS-ZFC" firstAttribute="top" secondItem="8a7-V5-yad" secondAttribute="top" id="sgv-TY-Dy8"/>

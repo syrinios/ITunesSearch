@@ -10,8 +10,9 @@ import UIKit
 
 class EmptyView: UIView {
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+
     enum Mode {
         case search
         case noData
@@ -28,14 +29,26 @@ class EmptyView: UIView {
             }
         }
         
+        var title: String {
+            switch self {
+            case .search:
+                return "Let's search!"
+            case .noData:
+                return "No data found!"
+            case .error(let error):
+                return "\(error.localizedDescription)"
+            }
+        }
+
+        
         var description: String {
             switch self {
             case .search:
-                return "Let's search!\nJust write what do you have in your mind 😁"
+                return "Just write what do you have in your mind 😁"
             case .noData:
-                return "No data found!\nTry with another term"
-            case .error(let error):
-                return "\(error.localizedDescription)"
+                return "Try with another term"
+            default:
+                return ""
             }
         }
     }
@@ -48,7 +61,8 @@ class EmptyView: UIView {
 
     private func updateViews() {
         self.imageView.image = self.mode.image
-        self.label.text = self.mode.description
+        self.titleLabel.text = self.mode.title
+        self.descriptionLabel.text = self.mode.description
     }
 
 }
