@@ -29,6 +29,8 @@ struct AppStyle {
     }
     
     struct Colors {
+        let congressBlue = UIColor(hex: 0x005493)
+        
         // shadows of gray
         let ghostWhite = UIColor(hex: 0xF5F5F6)
     }

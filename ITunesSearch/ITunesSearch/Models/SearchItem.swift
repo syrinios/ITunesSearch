@@ -77,6 +77,9 @@ struct SearchItem: Codable {
     let trackCount: Int?
     let trackTimeMillis: Int?
     
+    var id: String {
+        return "\(trackName ?? "")\(artistId ?? 0)\(collectionId ?? 0)\(trackId ?? 0)"
+    }
     
     enum CodingKeys: String, CodingKey {
         case artistId

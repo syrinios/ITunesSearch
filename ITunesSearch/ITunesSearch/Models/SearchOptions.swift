@@ -9,6 +9,6 @@
 import Foundation
 
 struct SearchOptions: Codable {
-    var media: Media?
+    var media: Media = .all
     var resultsLimit: Int?
 }

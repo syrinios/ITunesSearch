@@ -41,6 +41,12 @@ class SearchItemCell: UITableViewCell, NibReusable {
     }
     
     private func reload() {
+        if UserDefaults.standard.bool(forKey: item!.id) {
+            shadowView.backgroundColor = AppStyle.colors.congressBlue.withAlphaComponent(0.3)
+        } else {
+            shadowView.backgroundColor = .white
+        }
+
         previewImageView.sfSetImage(with: item?.thumbnailUrl, placeholder: #imageLiteral(resourceName: "placeholder"))
         kindLabel.text = item?.kind?.firstUppercased.replacingOccurrences(of: "-", with: " ") ?? "Kind undefined"
         trackNameLabel.text = item?.trackName ?? ""

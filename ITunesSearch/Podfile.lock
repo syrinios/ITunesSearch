@@ -4,17 +4,19 @@ PODS:
     - Reusable/View (= 4.0.5)
   - Reusable/Storyboard (4.0.5)
   - Reusable/View (4.0.5)
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
   - SnapKit (4.2.0)
-  - SwiftLint (0.30.1)
+  - SwiftLint (0.34.0)
+  - SwiftyAttributes (5.1.1)
 
 DEPENDENCIES:
   - Reusable (~> 4.0.0)
   - SDWebImage (~> 4.0)
   - SnapKit (~> 4.0)
   - SwiftLint (~> 0.24)
+  - SwiftyAttributes
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -22,13 +24,15 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SwiftLint
+    - SwiftyAttributes
 
 SPEC CHECKSUMS:
   Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
+  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
+  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 9460b2fe3676add8ffa9a5f6da29b5f8356bbe40
+PODFILE CHECKSUM: ab78f1f56757d03e3356249034eab258610d15c2
 
 COCOAPODS: 1.5.3

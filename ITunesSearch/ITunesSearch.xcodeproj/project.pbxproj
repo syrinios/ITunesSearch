@@ -15,6 +15,7 @@
 		81A7ABD122F3696800C940A3 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD022F3696800C940A3 /* String+Utils.swift */; };
 		81A7ABD322F3757F00C940A3 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD222F3757F00C940A3 /* FilterController.swift */; };
 		81A7ABD722F3891C00C940A3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD622F3891C00C940A3 /* Constants.swift */; };
+		81A7ABD922F4600900C940A3 /* ItemDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A7ABD822F4600900C940A3 /* ItemDetailsController.swift */; };
 		81DDBB4122F230CA00FE376E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DDBB4022F230CA00FE376E /* AppDelegate.swift */; };
 		81DDBB4322F230CA00FE376E /* ItunesSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */; };
 		81DDBB4622F230CA00FE376E /* ItunesSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81DDBB4422F230CA00FE376E /* ItunesSearch.storyboard */; };
@@ -57,6 +58,7 @@
 		81A7ABD022F3696800C940A3 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		81A7ABD222F3757F00C940A3 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
 		81A7ABD622F3891C00C940A3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		81A7ABD822F4600900C940A3 /* ItemDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsController.swift; sourceTree = "<group>"; };
 		81DDBB3D22F230CA00FE376E /* ITunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81DDBB4022F230CA00FE376E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchController.swift; sourceTree = "<group>"; };
@@ -163,9 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				81DDBB6C22F2C75000FE376E /* Configuration.swift */,
+				81A7ABD622F3891C00C940A3 /* Constants.swift */,
 				81DDBB7E22F2DF6500FE376E /* SearchOptions.swift */,
 				81DDBB8022F2E12D00FE376E /* SearchItem.swift */,
-				81A7ABD622F3891C00C940A3 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +281,7 @@
 				81DDBB9022F31B8500FE376E /* DataSource */,
 				81DDBB4222F230CA00FE376E /* ItunesSearchController.swift */,
 				81A7ABD222F3757F00C940A3 /* FilterController.swift */,
+				81A7ABD822F4600900C940A3 /* ItemDetailsController.swift */,
 				81DDBB4422F230CA00FE376E /* ItunesSearch.storyboard */,
 			);
 			path = Search;
@@ -407,6 +410,7 @@
 				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -415,6 +419,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -433,6 +438,7 @@
 				81DDBB8122F2E12D00FE376E /* SearchItem.swift in Sources */,
 				81DDBB7F22F2DF6500FE376E /* SearchOptions.swift in Sources */,
 				81A7ABCD22F35BF300C940A3 /* UIVIew+Shadows.swift in Sources */,
+				81A7ABD922F4600900C940A3 /* ItemDetailsController.swift in Sources */,
 				81DDBB4322F230CA00FE376E /* ItunesSearchController.swift in Sources */,
 				81DDBB6B22F238EF00FE376E /* ManagerConstants.swift in Sources */,
 				81DDBB6222F2369700FE376E /* NetworkParamEncoder.swift in Sources */,

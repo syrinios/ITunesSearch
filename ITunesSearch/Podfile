@@ -18,6 +18,9 @@ def shared_pods
 
     # A Swift Mixin to deal with reusable UITableView & UICollectionView cells and XIB-based views
     pod 'Reusable', '~> 4.0.0'
+    
+    # A Swifty API for attributed strings.
+    pod 'SwiftyAttributes'#, '~> 4.1.0'
 end
 
 

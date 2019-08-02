@@ -27,8 +27,15 @@ class ItunesSearchController: UIViewController {
         updateContentView(with: emptyView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        tableView.reloadData()
+    }
+    
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(cellType: SearchItemCell.self)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -61,7 +68,7 @@ class ItunesSearchController: UIViewController {
     
     private func searchTerm(_ term: String) {
         showLoader()
-        let options = SearchOptions( media: MediaCache.get(), resultsLimit: nil)
+        let options = SearchOptions( media: MediaCache.get() ?? .all, resultsLimit: nil)
         SearchManager(item: term, options: options).searchItems { (res) in
             switch res {
             case .success(let items):
@@ -112,6 +119,16 @@ extension ItunesSearchController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: SearchItemCell.self)
         cell.item = dataSource.item(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let detailsController = ItemDetailsController.fromStoryboard() as ItemDetailsController
+        guard let cell = tableView.cellForRow(at: indexPath) as? SearchItemCell else { return }
+        detailsController.item = cell.item
+        UserDefaults.standard.set(true, forKey: "\(cell.item!.id)")
+        UserDefaults.standard.synchronize()
+        self.navigationController?.pushViewController(detailsController, animated: true)
     }
 }
 

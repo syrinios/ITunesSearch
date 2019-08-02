@@ -26,3 +26,18 @@ extension UIView {
         return customInstance
     }
 }
+
+extension UIViewController {
+    static func fromStoryboard<T: UIViewController>() -> T {
+        return self.fromStoryboard(fileOwner: nil)
+    }
+    
+    static func fromStoryboard<T: UIViewController>(fileOwner: Any?) -> T {
+        let controllerName = String(describing: self)
+        let instance = UIStoryboard(name: "ItunesSearch", bundle: nil).instantiateViewController(withIdentifier: controllerName)
+        guard let customInstance = instance as? T else {
+            fatalError("Can't cast view from nib \(String(describing: self))")
+        }
+        return customInstance
+    }
+}
